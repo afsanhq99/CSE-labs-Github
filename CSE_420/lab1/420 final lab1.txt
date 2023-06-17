@@ -1,4 +1,3 @@
-input_text = open("420 lab1.txt", "r")
 
 keywords =  [
     "auto", "break", "case", "char", "const", "continue",
@@ -36,8 +35,8 @@ def lexicalAnalyzer(x):
     else:
         try:
             x = int(x)
-            if str(x) not in numericalValueList:
-                numericalValueList.append(str(x))
+            x= str(x)
+            numericalValueList.append(x)
         except ValueError:
             if "." in x:
                 if x not in numericalValueList:
@@ -48,24 +47,21 @@ def lexicalAnalyzer(x):
             else:
                 identifiersList.append(x)
 
-for line in input_text:
-    lineStr = line.strip()
+with open("420 lab1.txt") as f:
 
-    lineStr = lineStr.split()
-    # print(lineStr)
-    for word in lineStr:
-        lexicalAnalyzer(word) #function call
+    for line in f:
+        new = line.strip()
+        new = new.split()
+        for word in new:
+            lexicalAnalyzer(word) 
 
-#removing empty string from the identifiers
-ide=set(identifiersList)
-ide.discard(" ")
 
 
 print("Keywords: ", end="")
 print(*set(keywordsList) ,sep=", ")
 
 print("Identifiers: ", end="")
-print(*ide ,sep=", ")
+print(*set(identifiersList) ,sep=", ")
 
 print("Math Operators: ", end="")
 print(*set(mathOperatorList), sep=", ")
