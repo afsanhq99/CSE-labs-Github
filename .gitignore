@@ -1,0 +1,30 @@
+# Compiled files
+*.class
+*.o
+*.pyc
+
+# Logs and databases
+*.log
+*.sqlite
+*.db
+
+# IDE-specific files
+.idea/
+.vscode/
+
+# Dependency directories
+node_modules/
+vendor/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Other generated files
+build/
+dist/
+*.egg-info/

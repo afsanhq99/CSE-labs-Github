@@ -38,14 +38,11 @@ def lexicalAnalyzer(x):
             numericalValueList.append(x)
         else:
             if "." in x:
-                if x not in numericalValueList:
-                    numericalValueList.append(str(x))
+                numericalValueList.append(str(x))
             elif "10.0E" in x:
-                if x not in numericalValueList:
-                    numericalValueList.append(str(x))
+                numericalValueList.append(str(x))
             elif "-" in x:
                 numericalValueList.append(str(x))
-
             else:
                 identifiersList.append(x)
 # input_text = open("420 lab1.txt", "r")
