@@ -1,0 +1,62 @@
+import random
+
+# Get user input
+id = input("Enter your Student ID: ")
+hprange_in = input('Min and Max range of negative HP separated by space:').split(" ")
+
+
+# Calculate values
+minimum = hp_range[0]
+maximum = hp_range[1]
+turns = str(id[0])
+
+branches = str(id[2]) # 3 no number
+depth = 2 * int(turns)  # eta ekta formula
+ratio = depth / int(branches)
+hp = id[-2:]  #given formula
+main_hp = int(hp[::-1])  #main calculated to calculate the life by fully reversing
+leaf_nodes = int(branches) ** depth   #frmula given
+random_points = [random.randint(minimum, maximum) for _ in range(leaf_nodes)]
+
+# Perform alpha-beta pruning
+count = 0
+
+
+def AlphaBetaPruning(node, depth, isMaximizingPlayer, random_points, Alpha, Beta):
+    global count
+    if depth == 4:
+        return random_points[node]
+    if isMaximizingPlayer:
+        maxEval = minimum #aattacker max korar try kortese
+        for i in range(2):  # 2 ta shakha
+            value = AlphaBetaPruning(node * 2 + i, depth + 1, False, random_points, Alpha, Beta) # edik false karon edik minimize child node =npde*2 +i
+            maxEval = max(maxEval, value)
+            Alpha = max(Alpha, maxEval)
+            if Alpha >= Beta:
+                break
+            else:
+                count += 1
+        return maxEval
+    else:
+
+        maxEval = maximum  #defender min korar try kortese
+        for i in range(2):
+            value = AlphaBetaPruning(node * 2 + i, depth + 1, True, random_points, Alpha, Beta)
+            maxEval = min(maxEval, value)
+            Beta = min(Beta, maxEval)
+            if Alpha >= Beta:
+                break  # Prune the remaining branches
+            else:
+                count += 1
+        return maxEval
+
+
+root_val = AlphaBetaPruning(0, 0, True, random_points, minimum, maximum)
+Leaf_Node_Comparisons = len(random_points) - count
+Left_life = main_hp - root_val
+
+# Print results
+print('Depth and Branches ratio is', depth, ":", branches)
+print('Terminal States (leaf node values) are', random_points)
+print("Left life(HP) of the defender after maximum damage caused by the attacker is", Left_life)
+print('After Alpha-Beta Pruning Leaf Node Comparisons', Leaf_Node_Comparisons)
