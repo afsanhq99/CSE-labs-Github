@@ -9,24 +9,20 @@ def parse_input(input_tokens, parsing_table):
     while len(stack) > 0:
         top_of_stack = stack[-1]
 
-        # If the top of the stack is a non-terminal symbol
         if top_of_stack in parsing_table:
-            # If the current input token matches a production in the parsing table
             if input_tokens[input_index] in parsing_table[top_of_stack]:
                 production = parsing_table[top_of_stack][input_tokens[input_index]]
 
-                stack.pop()  # Pop the non-terminal symbol from the stack
-                # If the production is not epsilon, add its components to the stack
+                stack.pop()
                 if production != ['ε']:
                     stack.extend(reversed(production))
                 action = f"{top_of_stack}={''.join(production[::-1])}"
             else:
                 print("Parsing error. No production found in the table.")
                 return False
-        # If the top of the stack is a terminal symbol
         elif top_of_stack == input_tokens[input_index]:
-            stack.pop()  # Pop the terminal symbol from the stack
-            input_index += 1  # Move to the next input token
+            stack.pop()
+            input_index += 1
             action = "POP ACTION"
         else:
             print("Parsing error. Stack top and input mismatch.")
@@ -49,4 +45,12 @@ def parse_input(input_tokens, parsing_table):
 # Define the corrected parsing table
 parsing_table = {
     'E': {'id': ['T', 'E\''], '(': ['T', 'E\'']},
-    'E\'': {'+': ['+', 'T',
+    'E\'': {'+': ['+', 'T', 'E\''], ')': ['ε'], '$': ['ε']},
+    'T': {'id': ['F', 'T\''], '(': ['F', 'T\'']},
+    'T\'': {'+': ['ε'], '*': ['*', 'F', 'T\''], ')': ['ε'], '$': ['ε']},
+    'F': {'id': ['id'], '(': ['(', 'E', ')']}
+}
+
+# Test the parser with the example input as a list of tokens
+input_tokens = ['id', '+', '(', 'id', '*', 'id', ')']
+parse_input(input_tokens, parsing_table)
