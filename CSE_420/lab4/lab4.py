@@ -9,18 +9,18 @@ def parse_input(input_tokens, parsing_table):
     while len(stack) > 0:
         top_of_stack = stack[-1]
 
-        if top_of_stack in parsing_table:
-            if input_tokens[input_index] in parsing_table[top_of_stack]:
-                production = parsing_table[top_of_stack][input_tokens[input_index]]
+        if top_of_stack in parsing_table: #grammer ta mille
+            if input_tokens[input_index] in parsing_table[top_of_stack]: #first dictionary te value acces korbe id"
+                production = parsing_table[top_of_stack][input_tokens[input_index]]    #E -> T E'
 
-                stack.pop()
+                stack.pop() # E -> T E' er E ke pop kore T E' add kore
                 if production != ['ε']:
-                    stack.extend(reversed(production))
+                    stack.extend(reversed(production))   #E -> T E' er E ke pop kore T E' add kore
                 action = f"{top_of_stack}={''.join(production[::-1])}"
             else:
                 print("Parsing error. No production found in the table.")
                 return False
-        elif top_of_stack == input_tokens[input_index]:
+        elif top_of_stack == input_tokens[input_index]:  #direct mile gele jemon "id"
             stack.pop()
             input_index += 1
             action = "POP ACTION"
