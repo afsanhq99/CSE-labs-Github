@@ -15,6 +15,7 @@
 # Dependency directories
 node_modules/
 vendor/
+myenv/
 
 # Environment files
 .env
