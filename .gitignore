@@ -28,3 +28,4 @@ vendor/
 build/
 dist/
 *.egg-info/
+/myenv/
