@@ -1,0 +1,107 @@
+
+
+Admin
+Admins can view/edit all categories
+Admins can view/edit job posts
+Admins can disable and enable Workers/Customers
+Admins can disable and enable any services
+Admins can set discounts on services
+Admins can check ongoing purchases
+Admins can edit the front page to their liking
+
+
+Workers
+Workers can view/edit their categories
+Workers can view/edit their job posts
+Workers can message admins through WhatsApp
+Workers can set discounts on services
+Workers can upload pictures for their Jobposts
+
+
+Customers
+Customers can view all Jobposts
+Customers can search by categories
+Customers can browse Jobposts
+Customers can subscribe for notifications
+Customers can view their profile
+Payment System
+Customers can add/remove Jobs to their cart
+Customers can view the total amount of their purchase
+Customers can use an online banking system or Bkash/Nagad
+
+
+==================================
+
+
+
+
+
+
+
+
+
+
+
+
+Description :
+
+The online job portal system is  a dynamic online platform designed to facilitate local service interactions in a community. With distinct roles for Admins, Workers, and Customers, the platform offers a suite of features tailored to each user group.
+
+
+Admins have comprehensive control, including managing categories and job posts.
+They can enable or disable workers and customers as needed.
+Admins can configure and apply discounts to services.
+The platform allows admins to monitor ongoing purchases.
+They have the ability to customize the front page to enhance user experience.
+Worker Features:
+
+Workers can manage and edit their own categories and job posts.
+They have a direct line of communication with admins through WhatsApp.
+Workers can offer discounts on their services to attract more customers.
+They can enhance job posts by uploading images for better visibility.
+Customer Features:
+
+Customers can easily browse and search job posts based on categories.
+They have the option to subscribe for notifications, ensuring they stay informed about new services.
+The platform offers a secure payment system for hassle-free transactions.
+Customers can add or remove jobs from their cart, with a transparent view of the total purchase amount.
+Multiple payment methods, including online banking, Bkash, and Nagad, are available for their convenience.
+This Local Services Marketplace promotes local interactions, offers ease of access, and ensures a safe and efficient exchange of services within the community.
+
+
+Requirements and Features:
+
+
+Requirement 1: User Management
+
+Feature 1: Admins can create, edit, and delete user accounts for admins, workers, and customers.
+Feature 2: Admins can assign roles and permissions to user accounts.
+Feature 3: Admins can manage user subscriptions and notifications.
+Feature 4: Admins can generate reports on user activity and engagement.
+
+Requirement 2: Category and Job Post Management
+
+Feature 1: Admins can view, edit, and delete categories and job posts.
+Feature 2: Admins can approve or disapprove job posts before they go live.
+Feature 3: Admins can track category and job post performance metrics, such as views, clicks, and applications.
+Feature 4: Admins can generate reports on category and job post performance over time.
+Requirement 3: Worker Communication and Profile Management
+
+Feature 1: Workers can communicate with admins and customers via WhatsApp for inquiries and support.
+Feature 2: Workers can receive notifications for customer inquiries and service requests.
+Feature 3: Workers can manage their profile information, including contact details, skills, and experience.
+Feature 4: Workers can upload images and photos for their profile.
+Requirement 4: Customer Access and Interaction
+
+Feature 1: Customers can browse and view all job posts.
+Feature 2: Customers can search for job posts by categories, keywords, and other criteria.
+Feature 3: Customers can view detailed information about each job post, including description, requirements, and pricing.
+Feature 4: Customers can save job posts for later review.
+Requirement 5: Admin Customization and Security
+
+Feature 1: Admins can customize the front page layout by adding or rearranging content.
+Feature 2: Admins can implement role-based access control to ensure that users can only access their respective functionalities.
+Feature 3: Admins can implement account activation and deactivation mechanisms to control user access.
+Feature 4: Admins can implement secure payment processing to protect customer financial information.
+
+
